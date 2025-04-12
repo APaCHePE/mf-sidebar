@@ -1,0 +1,14 @@
+/* sidebar.component.css */
+:host {
+  display: block;
+  height: 100%;
+}
+
+.router-link-active {
+  background-color: rgba(99, 102, 241, 0.1);
+  color: #6366f1;
+}
+
+.dark .router-link-active {
+  background-color: rgba(99, 102, 241, 0.2);
+}
