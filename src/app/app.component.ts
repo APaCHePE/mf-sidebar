@@ -25,7 +25,7 @@ export class AppComponent {
         {
           icon: 'pi pi-chart-line',
           label: 'Solicitud de inspección',
-          path: '/consultas/dashboard',
+          path: '/comercial/consultas/dashboard',
         },
         {
           icon: 'pi pi-plus',
@@ -48,6 +48,354 @@ export class AppComponent {
           icon: 'pi pi-cog',
           label: 'Configuración',
           path: '/productos/configurar',
+        },
+        {
+          icon: 'pi pi-plus',
+          label: 'Operaciones',
+          expanded: false,
+          children: [
+            {
+              icon: 'pi pi-plus-circle',
+              label: 'Nuevo Producto',
+              path: '/productos/nuevo',
+            },
+            {
+              icon: 'pi pi-pencil',
+              label: 'Modificar',
+              path: '/productos/modificar',
+            },
+          ],
+        },
+        {
+          icon: 'pi pi-cog',
+          label: 'Configuración',
+          path: '/productos/configurar',
+        },
+        {
+          icon: 'pi pi-plus',
+          label: 'Operaciones',
+          expanded: false,
+          children: [
+            {
+              icon: 'pi pi-plus-circle',
+              label: 'Nuevo Producto',
+              path: '/productos/nuevo',
+            },
+            {
+              icon: 'pi pi-pencil',
+              label: 'Modificar',
+              path: '/productos/modificar',
+            },
+          ],
+        },
+        {
+          icon: 'pi pi-cog',
+          label: 'Configuración',
+          path: '/productos/configurar',
+        },
+      ],
+    },
+    {
+      icon: 'pi pi-users',
+      label: 'Clientes',
+      children: [
+        {
+          icon: 'pi pi-list',
+          label: 'Listado',
+          path: '/clientes/listado',
+        },
+        {
+          icon: 'pi pi-id-card',
+          label: 'Segmentos',
+          path: '/clientes/segmentos',
+        },
+      ],
+    },
+    {
+      icon: 'pi pi-users',
+      label: 'Clientes',
+      children: [
+        {
+          icon: 'pi pi-list',
+          label: 'Listado',
+          path: '/clientes/listado',
+        },
+        {
+          icon: 'pi pi-id-card',
+          label: 'Segmentos',
+          path: '/clientes/segmentos',
+        },
+      ],
+    },
+    {
+      icon: 'pi pi-users',
+      label: 'Clientes',
+      children: [
+        {
+          icon: 'pi pi-list',
+          label: 'Listado',
+          path: '/clientes/listado',
+        },
+        {
+          icon: 'pi pi-id-card',
+          label: 'Segmentos',
+          path: '/clientes/segmentos',
+        },
+      ],
+    },
+    {
+      icon: 'pi pi-users',
+      label: 'Clientes',
+      children: [
+        {
+          icon: 'pi pi-list',
+          label: 'Listado',
+          path: '/clientes/listado',
+        },
+        {
+          icon: 'pi pi-id-card',
+          label: 'Segmentos',
+          path: '/clientes/segmentos',
+        },
+      ],
+    },
+    {
+      icon: 'pi pi-users',
+      label: 'Clientes',
+      children: [
+        {
+          icon: 'pi pi-list',
+          label: 'Listado',
+          path: '/clientes/listado',
+        },
+        {
+          icon: 'pi pi-id-card',
+          label: 'Segmentos',
+          path: '/clientes/segmentos',
+        },
+      ],
+    },
+    {
+      icon: 'pi pi-users',
+      label: 'Clientes',
+      children: [
+        {
+          icon: 'pi pi-list',
+          label: 'Listado',
+          path: '/clientes/listado',
+        },
+        {
+          icon: 'pi pi-id-card',
+          label: 'Segmentos',
+          path: '/clientes/segmentos',
+        },
+      ],
+    },
+    {
+      icon: 'pi pi-users',
+      label: 'Clientes',
+      children: [
+        {
+          icon: 'pi pi-list',
+          label: 'Listado',
+          path: '/clientes/listado',
+        },
+        {
+          icon: 'pi pi-id-card',
+          label: 'Segmentos',
+          path: '/clientes/segmentos',
+        },
+      ],
+    },
+    {
+      icon: 'pi pi-users',
+      label: 'Clientes',
+      children: [
+        {
+          icon: 'pi pi-list',
+          label: 'Listado',
+          path: '/clientes/listado',
+        },
+        {
+          icon: 'pi pi-id-card',
+          label: 'Segmentos',
+          path: '/clientes/segmentos',
+        },
+      ],
+    },
+    {
+      icon: 'pi pi-users',
+      label: 'Clientes',
+      children: [
+        {
+          icon: 'pi pi-list',
+          label: 'Listado',
+          path: '/clientes/listado',
+        },
+        {
+          icon: 'pi pi-id-card',
+          label: 'Segmentos',
+          path: '/clientes/segmentos',
+        },
+      ],
+    },
+    {
+      icon: 'pi pi-users',
+      label: 'Clientes',
+      children: [
+        {
+          icon: 'pi pi-list',
+          label: 'Listado',
+          path: '/clientes/listado',
+        },
+        {
+          icon: 'pi pi-id-card',
+          label: 'Segmentos',
+          path: '/clientes/segmentos',
+        },
+      ],
+    },
+    {
+      icon: 'pi pi-users',
+      label: 'Clientes',
+      children: [
+        {
+          icon: 'pi pi-list',
+          label: 'Listado',
+          path: '/clientes/listado',
+        },
+        {
+          icon: 'pi pi-id-card',
+          label: 'Segmentos',
+          path: '/clientes/segmentos',
+        },
+      ],
+    },
+    {
+      icon: 'pi pi-users',
+      label: 'Clientes',
+      children: [
+        {
+          icon: 'pi pi-list',
+          label: 'Listado',
+          path: '/clientes/listado',
+        },
+        {
+          icon: 'pi pi-id-card',
+          label: 'Segmentos',
+          path: '/clientes/segmentos',
+        },
+      ],
+    },
+    {
+      icon: 'pi pi-users',
+      label: 'Clientes',
+      children: [
+        {
+          icon: 'pi pi-list',
+          label: 'Listado',
+          path: '/clientes/listado',
+        },
+        {
+          icon: 'pi pi-id-card',
+          label: 'Segmentos',
+          path: '/clientes/segmentos',
+        },
+      ],
+    },
+    {
+      icon: 'pi pi-users',
+      label: 'Clientes',
+      children: [
+        {
+          icon: 'pi pi-list',
+          label: 'Listado',
+          path: '/clientes/listado',
+        },
+        {
+          icon: 'pi pi-id-card',
+          label: 'Segmentos',
+          path: '/clientes/segmentos',
+        },
+      ],
+    },
+    {
+      icon: 'pi pi-users',
+      label: 'Clientes',
+      children: [
+        {
+          icon: 'pi pi-list',
+          label: 'Listado',
+          path: '/clientes/listado',
+        },
+        {
+          icon: 'pi pi-id-card',
+          label: 'Segmentos',
+          path: '/clientes/segmentos',
+        },
+      ],
+    },
+    {
+      icon: 'pi pi-users',
+      label: 'Clientes',
+      children: [
+        {
+          icon: 'pi pi-list',
+          label: 'Listado',
+          path: '/clientes/listado',
+        },
+        {
+          icon: 'pi pi-id-card',
+          label: 'Segmentos',
+          path: '/clientes/segmentos',
+        },
+      ],
+    },
+    {
+      icon: 'pi pi-users',
+      label: 'Clientes',
+      children: [
+        {
+          icon: 'pi pi-list',
+          label: 'Listado',
+          path: '/clientes/listado',
+        },
+        {
+          icon: 'pi pi-id-card',
+          label: 'Segmentos',
+          path: '/clientes/segmentos',
+        },
+      ],
+    },
+    {
+      icon: 'pi pi-users',
+      label: 'Clientes',
+      children: [
+        {
+          icon: 'pi pi-list',
+          label: 'Listado',
+          path: '/clientes/listado',
+        },
+        {
+          icon: 'pi pi-id-card',
+          label: 'Segmentos',
+          path: '/clientes/segmentos',
+        },
+      ],
+    },
+    {
+      icon: 'pi pi-users',
+      label: 'Clientes',
+      children: [
+        {
+          icon: 'pi pi-list',
+          label: 'Listado',
+          path: '/clientes/listado',
+        },
+        {
+          icon: 'pi pi-id-card',
+          label: 'Segmentos',
+          path: '/clientes/segmentos',
         },
       ],
     },

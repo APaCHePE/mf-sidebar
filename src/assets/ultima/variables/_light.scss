@@ -1,3 +1,12 @@
 :root {
     --surface-ground: var(--p-surface-100);
+    
+    --text-color-secondary: var(--p-text-muted-color);
+    --menu-bg: #ffffff;
+    --root-menuitem-text-color: var(--text-color-secondary);
+    --menuitem-text-color: var(--text-color);
+    --menuitem-hover-bg: var(--surface-hover);
+    --active-menuitem-text-color: var(--p-primary-900);
+    --active-menuitem-bg: var(--p-primary-50);
+    --inline-menu-border-color: var(--surface-border);
 }
