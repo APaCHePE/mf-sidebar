@@ -6,7 +6,7 @@
     <aside class="layout-sidebar w-64 bg-surface-100 dark:bg-surface-800 shadow-md p-4 overflow-y-auto">
       <nav class="flex flex-col gap-1 text-surface-700 dark:text-white">
         <!-- Iteramos por cada ítem del menú -->
-        <div *ngFor="let item of menuItems" class="flex flex-col">
+        <div *ngFor="let item of options" class="flex flex-col">
           <!-- Nivel 1 -->
           <div class="flex flex-col">
             <a *ngIf="item.path" [routerLink]="item.path"
