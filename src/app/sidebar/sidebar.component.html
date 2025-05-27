@@ -1,0 +1,56 @@
+<aside class="layout-sidebar w-64 bg-surface-100 dark:bg-surface-800 shadow-md p-4 overflow-y-auto">
+  <nav class="flex flex-col gap-1 text-surface-700 dark:text-white">
+    <!-- Iteramos por cada ítem del menú -->
+    <div *ngFor="let item of options" class="flex flex-col">
+      <!-- Nivel 1 -->
+      <div class="flex flex-col">
+        <a *ngIf="item.path" [routerLink]="item.path"
+          routerLinkActive="bg-primary-100 dark:bg-primary-900 text-primary font-bold"
+          class="hover:bg-surface-200 dark:hover:bg-surface-700 transition flex items-center gap-3 p-3 rounded-lg">
+          <i [class]="item.icon"></i>
+          <span>{{ item.label }}</span>
+        </a>
+
+        <button *ngIf="item.children && !item.path" (click)="toggleExpand(item)"
+          class="hover:bg-surface-200 dark:hover:bg-surface-700 transition flex items-center justify-between gap-3 p-3 rounded-lg w-full text-left">
+          <div class="flex items-center gap-3">
+            <i [class]="item.icon"></i>
+            <span>{{ item.label }}</span>
+          </div>
+          <i class="pi" [class.pi-chevron-down]="!item.expanded" [class.pi-chevron-up]="item.expanded"></i>
+        </button>
+      </div>
+
+      <!-- Nivel 2 -->
+      <div *ngIf="item.children && item.expanded" class="ml-6 mt-1 flex flex-col gap-1">
+        <div *ngFor="let child of item.children" class="flex flex-col">
+          <a *ngIf="child.path" [routerLink]="child.path"
+            routerLinkActive="bg-primary-50 dark:bg-primary-900/50 text-primary font-semibold"
+            class="hover:bg-surface-200 dark:hover:bg-surface-700 transition flex items-center gap-3 p-2 pl-4 rounded-lg">
+            <i [class]="child.icon"></i>
+            <span>{{ child.label }}</span>
+          </a>
+
+          <button *ngIf="child.children && !child.path" (click)="toggleExpand(child)"
+            class="hover:bg-surface-200 dark:hover:bg-surface-700 transition flex items-center justify-between gap-3 p-2 pl-4 rounded-lg w-full text-left">
+            <div class="flex items-center gap-3">
+              <i [class]="child.icon"></i>
+              <span>{{ child.label }}</span>
+            </div>
+            <i class="pi" [class.pi-chevron-down]="!child.expanded" [class.pi-chevron-up]="child.expanded"></i>
+          </button>
+
+          <!-- Nivel 3 -->
+          <div *ngIf="child.children && child.expanded" class="ml-4 mt-1 flex flex-col gap-1">
+            <a *ngFor="let subChild of child.children" [routerLink]="subChild.path"
+              routerLinkActive="bg-primary-50 dark:bg-primary-900/50 text-primary font-semibold"
+              class="hover:bg-surface-200 dark:hover:bg-surface-700 transition flex items-center gap-3 p-2 pl-8 rounded-lg text-sm">
+              <i [class]="subChild.icon"></i>
+              <span>{{ subChild.label }}</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</aside>
