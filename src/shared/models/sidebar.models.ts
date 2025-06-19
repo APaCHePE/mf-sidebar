@@ -1,5 +1,6 @@
 // models/option.model.ts
 export interface SidebarOption {
+  idmodulo: number;
   icon: string;
   label: string;
   path?: string;
