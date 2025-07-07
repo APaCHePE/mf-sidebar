@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
@@ -17,91 +17,28 @@ interface MenuItem {
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss',
 })
-export class SidebarComponent implements OnInit {
+export class SidebarComponent implements OnInit, OnDestroy {
   options: SidebarOption[] = [];
-  menuItems: MenuItem[] = [
-    {
-      icon: 'pi pi-box',
-      label: 'Reclamos',
-      expanded: false,
-      children: [
-        {
-          icon: 'pi pi-chart-line',
-          label: 'Solicitud de inspección',
-          path: '/consultas/dashboard',
-        },
-        {
-          icon: 'pi pi-plus',
-          label: 'Operaciones',
-          expanded: false,
-          children: [
-            {
-              icon: 'pi pi-plus-circle',
-              label: 'Nuevo Producto',
-              path: '/productos/nuevo',
-            },
-            {
-              icon: 'pi pi-pencil',
-              label: 'Modificar',
-              path: '/productos/modificar',
-            },
-          ],
-        },
-        {
-          icon: 'pi pi-cog',
-          label: 'Configuración',
-          path: '/productos/configurar',
-        },
-        {
-          icon: 'pi pi-plus',
-          label: 'Operaciones',
-          expanded: false,
-          children: [
-            {
-              icon: 'pi pi-plus-circle',
-              label: 'Nuevo Producto',
-              path: '/productos/nuevo',
-            },
-            {
-              icon: 'pi pi-pencil',
-              label: 'Modificar',
-              path: '/productos/modificar',
-            },
-          ],
-        },
-        {
-          icon: 'pi pi-cog',
-          label: 'Configuración',
-          path: '/productos/configurar',
-        },
-      ],
-    },
-    {
-      icon: 'pi pi-users',
-      label: 'Clientes',
-      children: [
-        {
-          icon: 'pi pi-list',
-          label: 'Listado',
-          path: '/clientes/listado',
-        },
-        {
-          icon: 'pi pi-id-card',
-          label: 'Segmentos',
-          path: '/clientes/segmentos',
-        },
-      ],
-    },
-  ];
 
+  moduleSelectedListener = (event: CustomEvent<{ idModulo: number }>) => {
+    // console.log('Module selected event:', event.detail);
+    const { idModulo } = event.detail;
+    console.log(`ID del módulo seleccionado: ${idModulo}`);
+    
+    this.sidebarService.updateOptionsForModule(idModulo);
+  };
+  
   constructor(private router: Router, private sidebarService: SidebarService) {}
   ngOnInit() {
     this.sidebarService.options$.subscribe((options) => {
       this.options = options;
     });
-
-    // Carga inicial por si hay datos en cache
-    this.options = this.sidebarService.getCachedOptions();
+    window.addEventListener('module-selected', this.moduleSelectedListener);
+    this.sidebarService.refreshOptions();
+  }
+  ngOnDestroy() {
+    // Eliminar el listener al destruir el componente
+    window.removeEventListener('module-selected', this.moduleSelectedListener);
   }
   toggleExpand(item: MenuItem): void {
     if (item.children) {
