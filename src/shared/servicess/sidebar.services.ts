@@ -21,7 +21,9 @@ export class SidebarService {
     this.initializeOptions();
   }
   private initializeOptions(): void {
-    const activeModuleId = Session.get(StorageConstants.MODULE_ACTIVE);
+    const activeModuleId = Session.get(
+      StorageConstants.MODULE_KEYS.MODULE_ACTIVE
+    );
     const moduleDefault = AuthUtils.getModuleDefault(
       localStorage.getItem(this.TOKEN_KEY) || ''
     );
@@ -53,7 +55,7 @@ export class SidebarService {
   }
 
   public refreshOptions(): void {
-    const activeModuleId = Session.get(StorageConstants.MODULE_ACTIVE);
+    const activeModuleId = Session.get(StorageConstants.MODULE_KEYS.MODULE_ACTIVE);
     const moduleDefault = AuthUtils.getModuleDefault(
       localStorage.getItem(this.TOKEN_KEY) || ''
     );
@@ -70,10 +72,9 @@ export class SidebarService {
   getOptionsForCache() {
     const cachedData = Session.get(`${this.OPTIONS_KEY}`);
     console.log('Cached options:', cachedData);
-    
-    if (!cachedData) return [];
     try {
-      // const cachedDataParse = JSON.parse(cachedData || '[]');
+      
+      if (!cachedData) return [];
       return cachedData;
     } catch (e) {
       console.error('Error parsing cached options', e);
@@ -92,8 +93,16 @@ export class SidebarService {
       (option: SidebarOption) => option.idmodulo == moduleId
     );
     if (filteredOptions.length > 0) {
-      this.optionsSubject.next(filteredOptions[0].children || []);
-      sessionStorage.setItem(StorageConstants.MODULE_ACTIVE, moduleId.toString());
+      // const opcionesMostrarSidebar = filteredOptions[0].children.map(
+      //   (option: SidebarOption) => ({
+      //     ...option,
+      //     items: option.children || [],
+      //   })
+      // );
+      console.log(`Opciones filtradas para el módulo ${moduleId}:`, filteredOptions);
+      
+      this.optionsSubject.next(filteredOptions || []);
+      sessionStorage.setItem(`${StorageConstants.MODULE_KEYS.MODULE_ACTIVE}`, moduleId.toString());
     } else {
       this.optionsSubject.next([]);
     }

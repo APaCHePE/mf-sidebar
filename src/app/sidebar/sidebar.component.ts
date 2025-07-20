@@ -31,6 +31,7 @@ export class SidebarComponent implements OnInit, OnDestroy {
   constructor(private router: Router, private sidebarService: SidebarService) {}
   ngOnInit() {
     this.sidebarService.options$.subscribe((options) => {
+      console.log("Items print ->", options)
       this.options = options;
     });
     window.addEventListener('module-selected', this.moduleSelectedListener);

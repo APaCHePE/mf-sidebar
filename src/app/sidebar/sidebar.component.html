@@ -22,7 +22,7 @@
       </div>
 
       <!-- Nivel 2 -->
-      <div *ngIf="item.children && item.expanded" class="ml-6 mt-1 flex flex-col gap-1">
+      <div *ngIf="item.children && item.expanded" class="ml-3 mt-1 flex flex-col gap-1">
         <div *ngFor="let child of item.children" class="flex flex-col">
           <a *ngIf="child.path" [routerLink]="child.path"
             routerLinkActive="bg-primary-50 dark:bg-primary-900/50 text-primary font-semibold"

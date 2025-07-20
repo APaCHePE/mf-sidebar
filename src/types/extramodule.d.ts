@@ -35,7 +35,7 @@ declare module '@test/mf-utils-modules' {
     function getModuleDefault(token: string): number;
   }
   export namespace OptionsAPI {
-    function getUserOptions(userId: string, token: string): Promise<any>;
+    function getUserOptions(userId: string, idSistema: string, token: string): Promise<any>;
   }
   // export namespace Local {
   //   function set(key: string, value: any): void;
